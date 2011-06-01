@@ -1,4 +1,33 @@
 Rails31SubdomainDevise::Application.routes.draw do
+  resources :sites
+
+  resources :members
+
+  get "home/index"
+
+  resources :members, :except => [:new, :create]
+
+  resources :roles
+
+  devise_for :users do
+    get "sign_in", :to => "devise/sessions#new"
+  end
+
+  resources :users, :only => [:index, :show]   do
+    member do
+      get :valid
+    end
+  end
+
+  resources :accounts, :only => [:index, :show]
+  constraints(AccountRoute) do
+    match '/' => 'sites#index'
+    match '/opps' => 'sites#opps'
+  end
+  match '/opps' => 'home#opps'
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -16,12 +45,12 @@ Rails31SubdomainDevise::Application.routes.draw do
   # Sample resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
-  #       post 'toggle'
+  #       get :short
+  #       post :toggle
   #     end
   #
   #     collection do
-  #       get 'sold'
+  #       get :sold
   #     end
   #   end
 
@@ -35,7 +64,7 @@ Rails31SubdomainDevise::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', :on => :collection
+  #       get :recent, :on => :collection
   #     end
   #   end
 
@@ -48,7 +77,7 @@ Rails31SubdomainDevise::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 

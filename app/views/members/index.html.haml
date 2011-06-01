@@ -1,0 +1,23 @@
+%h1 Listing members
+.index-list
+  %table
+    %tr
+      %th Login
+      %th Name
+      %th Email
+      %th Sign in count
+      %th Roles
+      %th Actions
+    - @members.each do |member|
+      %tr
+        %td= member.login
+        %td= member.name
+        %td= member.email
+        %td= member.sign_in_count
+        %td= member.roles
+        %td
+          = link_to 'Show', member
+          = link_to 'Edit', edit_member_path(member)
+          = link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'Invite New Member', new_user_invitation_path

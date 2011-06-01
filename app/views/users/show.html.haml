@@ -1,0 +1,13 @@
+%h1= @user.name
+%p
+  Email: #{@user.email}
+= link_to 'List of Users', users_path
+%h3
+  = @user.name
+  's Accounts
+%table
+  - account = @user.account
+  %tr
+    %td= link_to account.name, account
+    %td= link_to "Visit #{root_url(:account => account.name)}", root_url(:account => account.name)
+%br/

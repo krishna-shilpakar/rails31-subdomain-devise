@@ -13,8 +13,14 @@ module Rails31SubdomainDevise
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
-
+    config.autoload_paths += %W(#{config.root}/lib)
+    
+    # Custome application configuration
+    # Set to true if you want to allow users to sign up to an account/subdomain versus being invited
+     config.allow_account_sign_up = true
+    # Set to false if you want redirected to sign_in page on authenticate_user! Leaving true redirects to account home with flash alert
+     config.authenticate_to_home = false
+     
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -38,7 +44,7 @@ module Rails31SubdomainDevise
     # config.action_view.javascript_expansions[:defaults] = %w(prototype prototype_ujs)
     config.generators do |g|
       g.fixture_replacement :machinist
-      g.test_framework  :rspec, :fixture => false
+      g.test_framework  :rspec, :fixture => false, :view_specs => false, :routing_specs => false, :controller_specs => false, :helper_specs => false
     end
     
     # Configure the default encoding used in templates for Ruby 1.9.

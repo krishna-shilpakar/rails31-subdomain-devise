@@ -1,0 +1,5 @@
+%h1 Accounts
+%table
+  - @accounts.each do |account|
+    %tr
+      %td= link_to account.name, account

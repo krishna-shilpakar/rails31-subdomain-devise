@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Rails3-Account-Devise
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+  %body
+    #container
+      .f-right
+        %ul.hmenu
+          = render 'devise/menu/registration_items'
+          = render 'devise/menu/login_items'
+      .f-clear
+      #header
+      #menubar
+        %div
+          - if is_root_domain?
+            = link_to 'Home', root_path
+          - else
+            = link_to 'Home', root_url(:account => false)
+            |
+            \#{link_to 'Site Home', root_path}
+          - if can? :invite, User
+            | #{link_to "Invite User", new_user_invitation_path}
+          - if can? :manage, User
+            | #{link_to "Members", members_path}
+      #content
+        = flash_messages
+        = yield
+      #footer
+    .f-clear

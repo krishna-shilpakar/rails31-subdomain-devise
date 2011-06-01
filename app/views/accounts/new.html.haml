@@ -1,0 +1,4 @@
+%h1 New account
+= form_for([@user, @account]) do |f|
+  = render 'form'
+= link_to @account.user.name, user_path(@account.user)

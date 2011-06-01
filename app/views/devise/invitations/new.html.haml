@@ -1,0 +1,11 @@
+%h2 Send invitation
+= form_for resource, :as => resource_name, :url => invitation_path(resource_name) do |f|
+  = devise_error_messages!
+  = f.hidden_field :account_id, :value => current_account.id
+  %p
+    = f.label :email
+    %br/
+    = f.text_field :email
+  %p= f.submit "Send an invitation"
+= link_to "Home", after_sign_in_path_for(resource_name)
+%br/

@@ -1,0 +1,18 @@
+%p
+  %b Login:
+  = @member.login
+%p
+  %b Name:
+  = @member.name
+%p
+  %b Email:
+  = @member.email
+%p
+  %b Sign in count:
+  = @member.sign_in_count
+%p
+  %b Roles:
+  = @member.roles
+= link_to 'Edit', edit_member_path(@member)
+|
+\#{link_to 'Back', members_path}

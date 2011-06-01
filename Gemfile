@@ -23,6 +23,8 @@ gem 'cancan', '~> 1.6.5'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+gem 'rake', '0.8.7'
+
 group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
 end

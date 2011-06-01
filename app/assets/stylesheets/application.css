@@ -1,5 +1,67 @@
+
 /*
  * FIXME: Introduce SCSS & Sprockets
  *= require_self
  *= require_tree . 
 */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+blockquote, q { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; quotes: "" ""; }
+
+blockquote:before, q:before, blockquote:after, q:after { content: ""; }
+
+th, td, caption { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-align: left; font-weight: normal; vertical-align: middle; }
+
+table { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border-collapse: collapse; border-spacing: 0; vertical-align: middle; }
+
+a img { border: none; }
+
+body {background:#ddd;}
+p { margin-bottom:.5em;}
+
+h1 { font-size: 1.5em; margin-bottom:.5em; font-weight:bold; }
+
+h2 { font-size: 1.4em; margin-bottom:.5em; font-weight:bold; }
+
+h3 { font-size: 1.3em;  margin-bottom:.5em; font-weight:bold;}
+
+h4 { font-size: 1.2em; margin-bottom:.5em; font-weight:bold; }
+
+h5 { font-size: 1.1em; margin-bottom:.5em; font-weight:bold; }
+
+ul  {margin-left:16px;}
+
+#container { width: 960px; margin: auto; }
+
+#content { background: #f8f8f8; padding: 1em; }
+
+.f-left { float: left; margin-right:4px;}
+
+.f-right { float: right; padding: 0; }
+
+.f-clear { clear: both; height: 0; width: 0; }
+
+
+ul.hmenu {
+  list-style: none;	
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;  
+}
+
+.index-list table { border: solid 1px #036; width: 100%; }
+.index-list td, .assmnt-list th { padding: 2px; }
+.index-list table tr { background: #fff; border-bottom: dotted 1px #85ACC9; }
+.index-list tr.alt { background: #f8f8f8; }
+.index-list tr.list-header { background: #cde; padding: 2px; border:solid 1px #85ACC9; border-bottom: dotted 1px #85ACC9; }
+.index-list th {font-weight: bold; border: solid 1px #036;padding:1px 2px;border-bottom:none; background: #e0e0e0;}
+
+.message p{font-size:1.2em;}
+div.alert, div.error {color:red;border:solid red 1px;background:#fff;}
+div.notice {color:green;}
+div.warning {color:orange;}
+
+
